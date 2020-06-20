@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<title>putin walking</title>
 	<style type="text/css">
 
@@ -38,6 +38,10 @@ video {
 	    border: 6px solid #7922CC;
   	    border-radius: 35px;
 }
+.emoji, form.stacked input.emoji-copy, .search-form__button {
+    font-weight: 400;
+    font-family: apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol;
+}
 	</style>
 
 
@@ -55,7 +59,7 @@ video {
 </audio>
 
 <div id="content">
- <button id="button" onclick="playAudio()" type="button">Запустить шарманку</button>
+ <button id="button" onclick="playAudio()" type="button">Запустить шарманку<span class="emoji">🎵</span></button>
 </div>
 
 <script>
