@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="https://raw.githubusercontent.com/Vladqwelkj/vladqwelkj.github.io/master/favicon.ico" type="image/x-icon">
 	<title>Putin walking</title>
 	<style type="text/css">
 
@@ -42,6 +42,21 @@ video {
     font-weight: 400;
     font-family: apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol;
 }
+
+#blink {
+  -webkit-animation: blink 10s;
+  animation: blink 10s infinite;
+  color: red;
+  font-size: 1000%;
+  visibility: hidden;
+  text-align: center;
+}
+@-webkit-keyframes blink {
+  50% { color: red; font-size: 1000% }
+  51% { color: rgba(34, 34, 34, 0); }
+  100% { color: rgba(34, 34, 34, 0); }
+}
+
 	</style>
 
 
@@ -60,6 +75,7 @@ video {
 
 <div id="content">
  <button id="button" onclick="playAudio()" type="button">Запустить шарманку<span class="emoji">🎵</span></button>
+ <p id="blink">Putin<br>Putin<br>Putin<br>Putin<br>Putin<br>Putin<br>Putin<br></p>
 </div>
 
 <script>
@@ -68,7 +84,29 @@ var x = document.getElementById("myAudio");
 function playAudio() { 
   x.play();
   document.getElementById("button").style.visibility = "hidden";
+  document.getElementById("blink").style.visibility = "visible";
 } 
+
+function getRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function changeTextAlign() {
+  let r = getRandom(0, 2);
+  if (r==0) {
+    var align = 'left';
+  }
+  if (r==1) {
+    var align = 'center'
+  }
+  if (r==2) {
+    var align = 'right';
+  }
+  document.getElementById("blink").style.textAlign = align;
+}
+
+setInterval(changeTextAlign, 300);
+
 
 </script>
 </body>
