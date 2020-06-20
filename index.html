@@ -37,6 +37,9 @@ video {
 	    font-size: 300%;
 	    border: 6px solid #7922CC;
   	    border-radius: 35px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 .emoji, form.stacked input.emoji-copy, .search-form__button {
     font-weight: 400;
@@ -45,9 +48,9 @@ video {
 
 #blink {
   -webkit-animation: blink 10s;
-  animation: blink 10s infinite;
+  animation: blink 20s infinite;
   color: red;
-  font-size: 1000%;
+  font-size: 500%;
   visibility: hidden;
   text-align: center;
 }
@@ -75,7 +78,7 @@ video {
 
 <div id="content">
  <button id="button" onclick="playAudio()" type="button">Запустить шарманку<span class="emoji">🎵</span></button>
- <p id="blink">Putin<br>Putin<br>Putin<br>Putin<br>Putin<br>Putin<br>Putin<br></p>
+ <p id="blink">Putin Mr. President</p>
 </div>
 
 <script>
@@ -92,16 +95,14 @@ function getRandom(min, max) {
 }
 
 function changeTextAlign() {
-  let r = getRandom(0, 2);
+  let r = getRandom(0, 1);
   if (r==0) {
     var align = 'left';
   }
   if (r==1) {
-    var align = 'center'
+    var align = 'right'
   }
-  if (r==2) {
-    var align = 'right';
-  }
+
   document.getElementById("blink").style.textAlign = align;
 }
 
