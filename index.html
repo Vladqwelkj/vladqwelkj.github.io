@@ -84,7 +84,6 @@ video {
 
 <div id="content">
  <button id="button" onclick="playAudio()" type="button">Включить музончик чтоб качало<span class="emoji">🎵</span></button>
- <p id="blink">Putin Mr. President</p>
 </div>
 
 <script>
@@ -93,26 +92,9 @@ var x = document.getElementById("myAudio");
 function playAudio() { 
   x.play();
   document.getElementById("button").style.visibility = "hidden";
-  document.getElementById("blink").style.visibility = "visible";
 } 
 
-function getRandom(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
-function changeTextAlign() {
-  let r = getRandom(0, 1);
-  if (r==0) {
-    var align = 'left';
-  }
-  if (r==1) {
-    var align = 'right'
-  }
-
-  document.getElementById("blink").style.textAlign = align;
-}
-
-setInterval(changeTextAlign, 300);
 
 
 </script>
